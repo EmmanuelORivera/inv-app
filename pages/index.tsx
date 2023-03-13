@@ -2,10 +2,11 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
+import { CustomNextPage } from '@/types/CustomNextPage'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+const Home: CustomNextPage = () => {
   const { data, status } = useSession()
   return (
     <>
@@ -21,7 +22,12 @@ export default function Home() {
         {status === 'authenticated' && (
           <button onClick={() => signOut()}>SIGN OUT</button>
         )}
+        <Link style={{ marginLeft: '1rem' }} href="categories">
+          PROTECTED PAGE
+        </Link>
       </main>
     </>
   )
 }
+
+export default Home
