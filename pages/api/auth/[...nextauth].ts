@@ -20,13 +20,16 @@ export default NextAuth({
     updateAge: 60 * 60 * 24, // 24 hours
   },
 
-  useSecureCookies: true,
+  useSecureCookies: process.env.NODE_ENV === 'production', // There is no HTTPS in DEV env
 
   pages: {
     signIn: '/auth/signin',
   },
 
   callbacks: {
+    async redirect({ url, baseUrl }) {
+      return baseUrl
+    },
     async session({ session, token, user }) {
       if (session?.user) session.user.id = user.id
       return session
