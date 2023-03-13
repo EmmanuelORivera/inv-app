@@ -1,3 +1,18 @@
+# Inventory application
+
+## Tools
+
+- [Next](https://nextjs.org/docs/getting-started)
+- [Sass](https://nextjs.org/docs/messages/install-sass)
+- [Mantine](https://mantine.dev/guides/next/)
+- [React Query](https://tanstack.com/query/v4/docs/react/installation)
+- [React Query Developer Tools](https://tanstack.com/query/v4/docs/react/devtools)
+- [Prisma & Next-Auth](https://next-auth.js.org/adapters/prisma)
+- Axios
+- Zod
+- React-Icons
+- Docker Postgress Database
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
