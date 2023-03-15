@@ -9,6 +9,7 @@ import {
   ColorScheme,
 } from '@mantine/core'
 import { useState } from 'react'
+import PageLayout from '@/components/PageLayout'
 
 export type CustomAppProps = AppProps & {
   Component: NextComponentType & { requireAuth?: boolean }
@@ -42,10 +43,14 @@ export default function App({
         >
           {Component.requireAuth ? (
             <AuthGuard>
-              <Component {...pageProps} />
+              <PageLayout>
+                <Component {...pageProps} />
+              </PageLayout>
             </AuthGuard>
           ) : (
-            <Component {...pageProps} />
+            <PageLayout>
+              <Component {...pageProps} />
+            </PageLayout>
           )}
         </SessionProvider>
       </MantineProvider>
